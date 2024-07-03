@@ -1,6 +1,8 @@
 package test;
 
-abstract class Settings<S extends Settings<? extends S, B>, B extends Settings.Builder<? extends B, S>> {
+import java.io.Serializable;
+
+abstract class Settings<S extends Settings<? extends S, B>, B extends Settings.Builder<? extends B, S>> implements Serializable {
 
     abstract static class Builder<B extends Builder<? extends B, S>, S extends Settings<? extends S, B>> extends DomainObjectBuilder<S, Modification<S>> {
 
